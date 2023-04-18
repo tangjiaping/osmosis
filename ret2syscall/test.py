@@ -1,6 +1,5 @@
-##coding=utf8
+#/bin/python3
 from pwn import *
-## 构造与程序交互的对象
 
 def main():
 

